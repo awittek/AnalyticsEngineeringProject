@@ -13,8 +13,7 @@ WITH olympics_winter_data_source AS (
     sport,
     event,
     medal
- FROM `frvr-analytics-development.analytics_raw_olympics.raw_winter_games`
+ FROM {{ref('raw_winter_games')}}
 )
 
-SELECT * FROM  olympics_data_source
-ORDER BY id
+SELECT * FROM  olympics_winter_data_source
