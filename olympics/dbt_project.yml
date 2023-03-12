@@ -33,8 +33,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   olympics:
+    staging:
+      +schema: staging
+    reportng:
+      +schema: reportng
     # Config indicated by + and applies to all files under models/example/
 
 seeds:
   olympics:
-    +schema: raw_olympics
+    +schema: raw
