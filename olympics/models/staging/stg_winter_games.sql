@@ -1,5 +1,12 @@
-WITH olympics_winter_data_source AS (
-  SELECT 
+{{ config(materialized='table') }}
+
+
+WITH raw_winter_games AS (
+  SELECT * FROM {{ ref('raw_winter_games') }}
+),
+
+renamed AS (
+ SELECT 
     id,
     name, 
     sex AS gender,
@@ -13,7 +20,7 @@ WITH olympics_winter_data_source AS (
     sport,
     event,
     medal
- FROM {{ref('raw_winter_games')}}
+ FROM raw_winter_games
 )
 
-SELECT * FROM  olympics_winter_data_source
+SELECT * FROM renamed
