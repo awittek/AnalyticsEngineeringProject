@@ -37,6 +37,7 @@ models:
       +schema: staging
     reportng:
       +schema: reportng
+
     # Config indicated by + and applies to all files under models/example/
 
 seeds:

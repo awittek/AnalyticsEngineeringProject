@@ -1,5 +1,12 @@
-WITH olympics_summer_data_source AS (
-  SELECT 
+{{ config(materialized='table') }}
+
+
+WITH raw_summer_games AS (
+  SELECT * FROM {{ ref('raw_summer_games') }}
+),
+
+renamed AS (
+ SELECT 
     id,
     name, 
     sex AS gender,
@@ -13,7 +20,7 @@ WITH olympics_summer_data_source AS (
     sport,
     event,
     medal
- FROM {{ref('raw_summer_games')}}
+ FROM raw_summer_games
 )
 
-SELECT * FROM  olympics_summer_data_source
+SELECT * FROM renamed
