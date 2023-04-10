@@ -43,3 +43,5 @@ models:
 seeds:
   olympics:
     +schema: raw
+
+    
