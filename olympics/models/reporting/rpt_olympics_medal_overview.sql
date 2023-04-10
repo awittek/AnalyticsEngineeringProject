@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
+WITH rpt_olympics_games AS (
+    SELECT * FROM {{ ref('rpt_olympics_games') }}
+),
 
-WITH olympics_games_pivoted_by_medal AS (
+olympics_games_pivoted_by_medal AS (
     SELECT * FROM (
         SELECT
             name,
@@ -16,7 +19,7 @@ WITH olympics_games_pivoted_by_medal AS (
             sport,
             event,
             medal
-        FROM {{ ref('rpt_olympics_games') }}
+        FROM rpt_olympics_games
         WHERE medal IS NOT NULL
         )PIVOT
         (
