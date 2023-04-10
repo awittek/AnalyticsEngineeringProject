@@ -1,5 +1,6 @@
 {{ config(materialized='table') }}
 
+
 WITH rpt_olympics_games AS (
     SELECT * FROM {{ ref('rpt_olympics_games') }}
 ),
