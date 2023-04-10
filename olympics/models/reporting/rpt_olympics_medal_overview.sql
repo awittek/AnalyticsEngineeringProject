@@ -1,5 +1,6 @@
 {{ config(materialized='table') }}
 
+
 WITH olympics_games_pivoted_by_medal AS (
     SELECT * FROM (
         SELECT
