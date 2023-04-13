@@ -1,4 +1,10 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table'
+) }}
+
+{{ config(
+    tags=["olympics"]
+) }}
 
 
 WITH raw_winter_games AS (

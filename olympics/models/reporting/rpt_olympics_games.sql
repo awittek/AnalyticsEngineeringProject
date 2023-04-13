@@ -1,4 +1,10 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table'
+) }}
+
+{{ config(
+    tags=["olympics"]
+) }}
 
 
 WITH summer_and_winter_games AS (
