@@ -1,11 +1,7 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+     tags=["olympics"]
 ) }}
-
-{{ config(
-    tags=["olympics"]
-) }}
-
 
 WITH rpt_olympics_games AS (
     SELECT * FROM {{ ref('rpt_olympics_games') }}

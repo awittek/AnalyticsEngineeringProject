@@ -1,11 +1,7 @@
 {{ config(
-    materialized='table'
-) }}
-
-{{ config(
+    materialized='table',
     tags=["olympics"]
 ) }}
-
 
 WITH summer_and_winter_games AS (
     SELECT * FROM {{ ref('stg_summer_games') }}
