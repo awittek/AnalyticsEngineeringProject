@@ -1,5 +1,7 @@
-{{ config(materialized='table') }}
-
+{{ config(
+    materialized='table',
+     tags=["olympics"]
+) }}
 
 WITH raw_winter_games AS (
   SELECT * FROM {{ ref('raw_winter_games') }}
