@@ -23,8 +23,8 @@ olympics_games_pivoted_by_medal AS (
 
 olympics_games_grouped_by_gender_and_sport AS (
     SELECT 
-        gender AS gender,
-        sport AS sport,
+        gender,
+        sport,
         SUM(gold_medal) AS gold_medal_total,
         SUM(silver_medal) AS silver_medal_total,
         SUM(bronze_medal) AS bronze_medal_total
