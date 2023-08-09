@@ -10,6 +10,7 @@ WITH rpt_olympics_games AS (
 olympics_games_pivoted_by_medal AS (
     SELECT * FROM (
         SELECT
+            team,
             gender,
             sport,
             medal
@@ -23,13 +24,14 @@ olympics_games_pivoted_by_medal AS (
 
 olympics_games_grouped_by_gender_and_sport AS (
     SELECT 
+        team,
         gender,
         sport,
         SUM(gold_medal) AS gold_medal_total,
         SUM(silver_medal) AS silver_medal_total,
         SUM(bronze_medal) AS bronze_medal_total
     FROM olympics_games_pivoted_by_medal
-    GROUP BY gender, sport
+    GROUP BY team, gender, sport
 )
 
 SELECT * FROM olympics_games_grouped_by_gender_and_sport
