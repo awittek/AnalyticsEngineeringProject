@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: rpt_olympics_games
+    description: "Aggregated data for reporting purposes collecting summary of summer and winter games."
+    columns:
+      - name: id
+        description: "Unique identifier for each record"
+      - name: name
+        description: "Name of the participant"
+      - name: gender
+        description: "Gender of the participant"
+      - name: age
+        description: "Age of the participant"
+      - name: team
+        description: "Name of the team the participant belongs to"
+      - name: noc
+        description: "National Olympic Committee code"
+      - name: games
+        description: "Name of the Olympic games"
+      - name: year
+        description: "Year of the Olympic games"
+      - name: season
+        description: "Season of the Olympic games (Summer/Winter)"
+      - name: city
+        description: "Host city of the Olympic games"
+      - name: sport
+        description: "Name of the sport"
+      - name: event
+        description: "Name of the specific event within the sport"
+      - name: medal
+        description: "Type of medal won by the participant"
+
+  - name: rpt_olympics_medal_overview
+    description: "Aggregated data for reporting purposes with summary of olympics' medals."
+    columns:
+      - name: name
+        description: "Name of the participant"
+      - name: team
+        description: "Name of the team the participant belongs to"
+      - name: gender
+        description: "Gender of the participant"
+      - name: sport
+        description: "Name of the sport"
+      - name: gold_medal_total
+        description: "Total number of gold medals won by the participant"
+      - name: silver_medal_total
+        description: "Total number of silver medals won by the participant"
+      - name: bronze_medal_total
+        description: "Total number of bronze medals won by the participant"
+
+  - name: rpt_olympics_top_10_athlete
+    description: "Aggregated data for reporting purposes with summary of 10 best athletes."
+    columns:
+      - name: athlete_name
+        description: "Name of the athlete"
+      - name: country
+        description: "Country the athlete represents"
+      - name: gender
+        description: "Gender of the athlete"
+      - name: sport
+        description: "Name of the sport"
+      - name: medal_total
+        description: "Total number of medals won by the athlete"
