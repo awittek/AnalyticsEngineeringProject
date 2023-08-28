@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg_summer_games
+    description: "Cleaned olympics dataset collecting data about summer games."
+    columns:
+      - name: id
+        description: "Unique identifier for each record"
+      - name: name
+        description: "Name of the participant"
+      - name: gender
+        description: "Gender of the participant"
+      - name: age
+        description: "Age of the participant"
+      - name: team
+        description: "Name of the team the participant belongs to"
+      - name: noc
+        description: "National Olympic Committee code"
+      - name: games
+        description: "Name of the Olympic games"
+      - name: year
+        description: "Year of the Olympic games"
+      - name: season
+        description: "Season of the Olympic games (Summer/Winter)"
+      - name: city
+        description: "Host city of the Olympic games"
+      - name: sport
+        description: "Name of the sport"
+      - name: event
+        description: "Name of the specific event within the sport"
+      - name: medal
+        description: "Type of medal won by the participant"
+
+  - name: stg_winter_games
+    description: "Cleaned olympics dataset collecting data about winter games."
+    columns:
+      - name: id
+        description: "Unique identifier for each record"
+      - name: name
+        description: "Name of the participant"
+      - name: gender
+        description: "Gender of the participant"
+      - name: age
+        description: "Age of the participant"
+      - name: team
+        description: "Name of the team the participant belongs to"
+      - name: noc
+        description: "National Olympic Committee code"
+      - name: games
+        description: "Name of the Olympic games"
+      - name: year
+        description: "Year of the Olympic games"
+      - name: season
+        description: "Season of the Olympic games (Summer/Winter)"
+      - name: city
+        description: "Host city of the Olympic games"
+      - name: sport
+        description: "Name of the sport"
+      - name: event
+        description: "Name of the specific event within the sport"
+      - name: medal
+        description: "Type of medal won by the participant"
