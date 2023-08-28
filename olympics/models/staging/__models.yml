@@ -6,10 +6,15 @@ models:
     columns:
       - name: id
         description: "Unique identifier for each record"
+        tests: 
+          - not_null
       - name: name
         description: "Name of the participant"
       - name: gender
         description: "Gender of the participant"
+        tests: 
+          - accepted_values:
+              values: ['F', 'M'] 
       - name: age
         description: "Age of the participant"
       - name: team
@@ -20,8 +25,14 @@ models:
         description: "Name of the Olympic games"
       - name: year
         description: "Year of the Olympic games"
+        tests: 
+          - dbt_utils.accepted_range:
+              min_value: 2000
       - name: season
         description: "Season of the Olympic games (Summer/Winter)"
+        tests: 
+          - accepted_values:
+              values: ['Summer'] 
       - name: city
         description: "Host city of the Olympic games"
       - name: sport
@@ -30,16 +41,24 @@ models:
         description: "Name of the specific event within the sport"
       - name: medal
         description: "Type of medal won by the participant"
+        tests: 
+          - accepted_values:
+              values: ['Gold', 'Silver', 'Bronze'] 
 
   - name: stg_winter_games
     description: "Cleaned olympics dataset collecting data about winter games."
     columns:
       - name: id
         description: "Unique identifier for each record"
+        tests: 
+          - not_null
       - name: name
         description: "Name of the participant"
       - name: gender
         description: "Gender of the participant"
+        tests: 
+          - accepted_values:
+              values: ['F', 'M']
       - name: age
         description: "Age of the participant"
       - name: team
@@ -50,8 +69,14 @@ models:
         description: "Name of the Olympic games"
       - name: year
         description: "Year of the Olympic games"
+        tests: 
+          - dbt_utils.accepted_range:
+              min_value: 2000
       - name: season
         description: "Season of the Olympic games (Summer/Winter)"
+        tests: 
+          - accepted_values:
+              values: ['Winter'] 
       - name: city
         description: "Host city of the Olympic games"
       - name: sport
@@ -60,3 +85,6 @@ models:
         description: "Name of the specific event within the sport"
       - name: medal
         description: "Type of medal won by the participant"
+        tests: 
+          - accepted_values:
+              values: ['Gold', 'Silver', 'Bronze'] 
