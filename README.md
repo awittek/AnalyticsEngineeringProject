@@ -50,8 +50,6 @@ This project aims to explore and analyze data related to the Summer and Winter O
    dbt test
    ```
 
-3. **Reporting**: Generate reports and insights from the dbt models.
-
 ## Project Structure
 
 The project follows the following directory structure:
