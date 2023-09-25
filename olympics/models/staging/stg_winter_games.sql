@@ -1,6 +1,5 @@
 {{ config(
     materialized='table',
-    unique_key="id||'-'||name",
      tags=["olympics"]
 ) }}
 
@@ -10,7 +9,7 @@ WITH raw_winter_games AS (
 
 renamed AS (
  SELECT 
-    id||'-'||name AS id,
+    {{ dbt_utils.generate_surrogate_key(['id', 'name', 'sex', 'team']) }} AS id,
     name, 
     sex AS gender,
     age,
