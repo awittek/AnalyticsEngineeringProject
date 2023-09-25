@@ -1,5 +1,6 @@
 {{ config(
     materialized='table',
+    unique_key="id||'-'||name",
      tags=["olympics"]
 ) }}
 
@@ -9,7 +10,7 @@ WITH raw_winter_games AS (
 
 renamed AS (
  SELECT 
-    id,
+    id||'-'||name AS id,
     name, 
     sex AS gender,
     age,
