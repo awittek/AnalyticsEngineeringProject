@@ -8,6 +8,7 @@ models:
         description: "Unique identifier for each record"
         tests: 
           - not_null
+          - unique
       - name: name
         description: "Name of the participant"
       - name: gender
@@ -48,6 +49,11 @@ models:
   - name: rpt_olympics_medal_overview
     description: "Aggregated data for reporting purposes with summary of olympics' medals."
     columns:
+      - name: id
+        description: "Unique identifier for each record"
+        tests: 
+          - not_null
+          - unique    
       - name: name
         description: "Name of the participant"
       - name: team
@@ -69,6 +75,11 @@ models:
   - name: rpt_olympics_top_10_athlete
     description: "Aggregated data for reporting purposes with summary of 10 best athletes."
     columns:
+      - name: id
+        description: "Unique identifier for each record"
+        tests: 
+          - not_null
+          - unique    
       - name: athlete_name
         description: "Name of the athlete"
       - name: country

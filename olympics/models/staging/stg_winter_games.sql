@@ -9,7 +9,7 @@ WITH raw_winter_games AS (
 
 renamed AS (
  SELECT 
-    id,
+    {{ dbt_utils.generate_surrogate_key(['id', 'name', 'sex', 'team']) }} AS id,
     name, 
     sex AS gender,
     age,
