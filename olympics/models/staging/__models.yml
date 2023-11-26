@@ -90,3 +90,46 @@ models:
         tests: 
           - accepted_values:
               values: ['Gold', 'Silver', 'Bronze'] 
+
+  - name: stg_countries
+    description: "Referential table collecting list of countries."
+    columns:
+      - name: id
+        description: "Unique identifier for each record"
+        tests: 
+          - not_null
+          - unique
+      - name: contry_name
+        description: "Name of the country"
+        tests: 
+          - not_null
+          - unique        
+      - name: country_short_code
+        description: "Short code of the country"
+        tests: 
+          - not_null
+          - unique   
+      - name: country_long_code
+        description: "Long code of the country"
+        tests: 
+          - not_null
+          - unique     
+      - name: country_numeric_code
+        description: "Numeric code of the country"
+        tests: 
+          - not_null
+          - unique    
+      - name: iso
+        description: "Iso number"          
+      - name: region
+        description: "Name of the country region"   
+      - name: sub_region
+        description: "Name of the country sub-region"  
+      - name: intermediate_region
+        description: "Name of the intermediate region"  
+      - name: region_code
+        description: "Code of the country region"  
+      - name: sub_region_code
+        description: "Code of the country sub-region"    
+      - name: intermediate_region_code
+        description: "Code of the country intermediate region"                                                                   
