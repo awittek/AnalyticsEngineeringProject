@@ -12,14 +12,11 @@ olympics_games_pivoted_by_medal AS (
         SELECT
             rog.id,
             rog.name,
-            sc.country_short_code AS country_code,
             rog.team,
             rog.gender,
             rog.sport,
             rog.medal
         FROM rpt_olympics_games AS rog
-        LEFT JOIN {{ ref('stg_countries') }} AS sc
-        ON rog.team = sc.contry_name
         WHERE medal IS NOT NULL
         )PIVOT
         (
@@ -31,7 +28,6 @@ olympics_games_grouped_by_gender_and_sport AS (
     SELECT 
         id,
         name,
-        country_code,
         team,
         gender,
         sport,
@@ -39,7 +35,7 @@ olympics_games_grouped_by_gender_and_sport AS (
         SUM(silver_medal) AS silver_medal_total,
         SUM(bronze_medal) AS bronze_medal_total
     FROM olympics_games_pivoted_by_medal
-    GROUP BY id, name, country_code, team, gender, sport
+    GROUP BY id, name, team, gender, sport
 )
 
 SELECT * FROM olympics_games_grouped_by_gender_and_sport

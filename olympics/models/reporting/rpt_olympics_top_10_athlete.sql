@@ -11,13 +11,12 @@ rpt_olympics_top_10_athlete AS (
     SELECT 
         id,
         name AS athlete_name,
-        country_code,
-        team AS country_name,
+        team as country,
         gender,
         sport,
         SUM(gold_medal_total) + SUM(silver_medal_total) + SUM(bronze_medal_total) AS medal_total
     FROM rpt_olympics_medal_overview
-    GROUP BY id, name, country_code, team, gender, sport
+    GROUP BY id, name, team, gender, sport
     ORDER BY medal_total DESC
     LIMIT 10
 )
