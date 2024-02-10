@@ -11,7 +11,7 @@ rpt_olympics_top_10_athlete AS (
     SELECT 
         id,
         name AS athlete_name,
-        team as country,
+        team AS country,
         gender,
         sport,
         SUM(gold_medal_total) + SUM(silver_medal_total) + SUM(bronze_medal_total) AS medal_total

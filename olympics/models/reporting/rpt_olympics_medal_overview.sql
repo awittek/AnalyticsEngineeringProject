@@ -10,13 +10,13 @@ WITH rpt_olympics_games AS (
 olympics_games_pivoted_by_medal AS (
     SELECT * FROM (
         SELECT
-            rog.id,
-            rog.name,
-            rog.team,
-            rog.gender,
-            rog.sport,
-            rog.medal
-        FROM rpt_olympics_games AS rog
+            id,
+            name,
+            team,
+            gender,
+            sport,
+            medal
+        FROM rpt_olympics_games
         WHERE medal IS NOT NULL
         )PIVOT
         (
