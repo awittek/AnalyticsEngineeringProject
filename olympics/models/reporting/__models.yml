@@ -73,7 +73,7 @@ models:
         description: "Total number of bronze medals won by the participant"
 
   - name: rpt_olympics_top_10_athlete
-    description: "Aggregated data for reporting purposes with summary of 10 best athletes."
+    description: "Aggregated data for reporting purposes with summary of 10 best athletes"
     columns:
       - name: id
         description: "Unique identifier for each record"
